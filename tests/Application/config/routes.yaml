@@ -1,0 +1,9 @@
+aropixel_sylius_block_shop:
+    resource: "@AropixelSyliusBlockPlugin/Resources/config/shop_routing.yml"
+    prefix: /{_locale}
+    requirements:
+        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
+
+aropixel_sylius_block_admin:
+    resource: "@AropixelSyliusBlockPlugin/Resources/config/admin_routing.yml"
+    prefix: /admin

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+
+        <service id="aropixel.sylius_block_plugin.menu.admin_menu_listener" class="Aropixel\SyliusBlockPlugin\Menu\AdminMenuListener">
+            <tag name="kernel.event_listener" event="sylius.menu.admin.main" method="addAdminMenuItems"/>
+        </service>
+
+        <service id="aropixel_sylius_block_plugin.form.type.block" class="Aropixel\SyliusBlockPlugin\Form\Type\BlockType">
+            <argument>%aropixel.model.block.class%</argument>
+            <tag name="form.type" />
+        </service>
+
+        <service id="aropixel_sylius_block_plugin.repository.block" class="Aropixel\SyliusBlockPlugin\Repository\BlockRepository">
+            <argument type="service" id="doctrine"/>
+            <argument>%aropixel.model.block.class%</argument>
+        </service>
+
+        <service id="Aropixel\SyliusBlockPlugin\Controller\BlockController" public="true">
+            <call method="setContainer">
+                <argument type="service" id="Psr\Container\ContainerInterface"/>
+            </call>
+            <tag name="container.service_subscriber"/>
+            <argument type="service" id="aropixel_sylius_block_plugin.repository.block" />
+        </service>
+
+        <service id="aropixel_sylius_block_plugin.controller.block" public="true" alias="Aropixel\SyliusBlockPlugin\Controller\BlockController" />
+
+    </services>
+</container>

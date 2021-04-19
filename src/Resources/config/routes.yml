@@ -1,0 +1,29 @@
+aropixel_admin_block_category:
+  resource: |
+    alias: aropixel.block_category
+    section: admin
+    path: blocks/categories
+    templates: "@SyliusAdmin\\Crud"
+    redirect: update
+    grid: aropixel_admin_block_category
+    vars:
+        all:
+            subheader: aropixel.ui.category
+        index:
+            icon: 'tags'
+  type: sylius.resource
+
+aropixel_admin_block:
+  resource: |
+    alias: aropixel.block
+    section: admin
+    path: blocks
+    templates: "@SyliusAdmin\\Crud"
+    redirect: update
+    grid: aropixel_admin_block
+    vars:
+          all:
+              subheader: aropixel.ui.block
+          index:
+              icon: 'cubes'
+  type: sylius.resource

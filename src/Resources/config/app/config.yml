@@ -1,0 +1,73 @@
+stof_doctrine_extensions:
+  default_locale: fr_FR
+  orm:
+    default:
+      timestampable: true
+
+
+sylius_resource:
+  resources:
+    aropixel.block:
+      driver: doctrine/orm
+      classes:
+        model: Aropixel\SyliusBlockPlugin\Entity\Block
+        form: Aropixel\SyliusBlockPlugin\Form\Type\BlockType
+
+    aropixel.block_category:
+      driver: doctrine/orm
+      classes:
+        model: Aropixel\SyliusBlockPlugin\Entity\BlockCategory
+
+
+sylius_grid:
+  grids:
+    aropixel_admin_block:
+      driver:
+        name: doctrine/orm
+        options:
+          class: Aropixel\SyliusBlockPlugin\Entity\Block
+      fields:
+        title:
+          type: string
+          label: aropixel.ui.block.title
+        category.title:
+          type: string
+          label: aropixel.ui.block_category.title
+        enabled:
+          type: twig
+          label: sylius.ui.enabled
+          options:
+            template: "@SyliusUi/Grid/Field/enabled.html.twig"
+      actions:
+        main:
+          create:
+            type: create
+        item:
+          update:
+            type: update
+          delete:
+            type: delete
+
+    aropixel_admin_block_category:
+      driver:
+        name: doctrine/orm
+        options:
+          class: Aropixel\SyliusBlockPlugin\Entity\BlockCategory
+      fields:
+        title:
+          type: string
+          label: aropixel.ui.block_category.title
+        enabled:
+          type: twig
+          label: sylius.ui.enabled
+          options:
+            template: "@SyliusUi/Grid/Field/enabled.html.twig"
+      actions:
+        main:
+          create:
+            type: create
+        item:
+          update:
+            type: update
+          delete:
+            type: delete

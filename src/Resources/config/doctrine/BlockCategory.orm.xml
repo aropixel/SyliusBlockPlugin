@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:gedmo="http://gediminasm.org/schemas/orm/doctrine-extensions-mapping">
+
+    <mapped-superclass name="Aropixel\SyliusBlockPlugin\Entity\BlockCategory" table="aropixel_block_category">
+
+        <id name="id" column="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
+
+        <field name="title" length="255" type="string"/>
+
+        <field name="enabled" type="boolean" nullable="true" />
+
+        <one-to-many field="blocks" target-entity="Aropixel\SyliusBlockPlugin\Entity\Block" mapped-by="category"/>
+
+        <field name="createdAt" type="datetime" column="created_at">
+            <gedmo:timestampable on="create"/>
+        </field>
+
+    </mapped-superclass>
+
+</doctrine-mapping>

@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: Aropixel\SyliusBlockPlugin
+        psr4_prefix: Aropixel\SyliusBlockPlugin
