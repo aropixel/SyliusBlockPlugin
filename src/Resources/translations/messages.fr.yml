@@ -6,7 +6,7 @@ aropixel:
     new_block: Nouveau Block
     edit_block: Modifier le block
 
-    block_category.title: Titre
+    block_category.title: Titre de la catégorie
     category: Categorie
     block_categories: Catégories de blocks
     new_block_category: Nouvelle catégorie de blocks
