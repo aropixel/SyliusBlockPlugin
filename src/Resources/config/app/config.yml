@@ -17,6 +17,7 @@ sylius_resource:
       driver: doctrine/orm
       classes:
         model: Aropixel\SyliusBlockPlugin\Entity\BlockCategory
+        form: Aropixel\SyliusBlockPlugin\Form\Type\BlockCategoryType
 
 
 sylius_grid:
@@ -30,9 +31,11 @@ sylius_grid:
         title:
           type: string
           label: aropixel.ui.block.title
-        category.title:
-          type: string
+        category:
+          type: twig
           label: aropixel.ui.block_category.title
+          options:
+            template: "@AropixelSyliusBlockPlugin/Grid/Field/Block/category.html.twig"
         enabled:
           type: twig
           label: sylius.ui.enabled

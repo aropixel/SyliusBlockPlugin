@@ -1,4 +1,11 @@
 aropixel:
+  form:
+    block:
+      title: Titre
+      enabled: Activé ?
+    block_category:
+      title: Titre
+      enabled: Activée ?
   ui:
     block.title: Titre
     block: Block
@@ -8,6 +15,7 @@ aropixel:
 
     block_category.title: Titre de la catégorie
     category: Categorie
-    block_categories: Catégories de blocks
-    new_block_category: Nouvelle catégorie de blocks
+    block_categories: Catégories de blocs
+    new_block_category: Nouvelle catégorie de blocs
     edit_block_category: Modifier la catégorie
+

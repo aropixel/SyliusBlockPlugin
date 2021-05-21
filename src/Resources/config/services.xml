@@ -12,6 +12,11 @@
             <tag name="form.type" />
         </service>
 
+        <service id="aropixel_sylius_block_plugin.form.type.block_category" class="Aropixel\SyliusBlockPlugin\Form\Type\BlockCategoryType">
+            <argument>%aropixel.model.block_category.class%</argument>
+            <tag name="form.type" />
+        </service>
+
         <service id="aropixel_sylius_block_plugin.repository.block" class="Aropixel\SyliusBlockPlugin\Repository\BlockRepository">
             <argument type="service" id="doctrine"/>
             <argument>%aropixel.model.block.class%</argument>

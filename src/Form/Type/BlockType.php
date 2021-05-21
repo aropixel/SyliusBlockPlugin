@@ -19,7 +19,7 @@ class BlockType extends AbstractResourceType
     {
         $builder
             ->add('title', TextType::class, [
-                'label' => 'Titre'
+                'label' => 'aropixel.form.block.title',
             ])
 
             ->add('code', TextType::class, [
@@ -37,7 +37,7 @@ class BlockType extends AbstractResourceType
             ])
 
             ->add('enabled', CheckboxType::class, [
-                'label' => 'Activée ?',
+                'label' => 'aropixel.form.block.enabled',
             ])
 
         ;
