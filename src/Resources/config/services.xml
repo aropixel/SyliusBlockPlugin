@@ -9,11 +9,17 @@
 
         <service id="aropixel_sylius_block_plugin.form.type.block" class="Aropixel\SyliusBlockPlugin\Form\Type\BlockType">
             <argument>%aropixel.model.block.class%</argument>
+            <argument type="collection">
+                <argument>sylius</argument>
+            </argument>
             <tag name="form.type" />
         </service>
 
         <service id="aropixel_sylius_block_plugin.form.type.block_category" class="Aropixel\SyliusBlockPlugin\Form\Type\BlockCategoryType">
             <argument>%aropixel.model.block_category.class%</argument>
+            <argument type="collection">
+                <argument>sylius</argument>
+            </argument>
             <tag name="form.type" />
         </service>
 

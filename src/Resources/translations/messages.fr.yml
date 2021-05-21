@@ -8,8 +8,8 @@ aropixel:
       enabled: Activée ?
   ui:
     block.title: Titre
-    block: Block
-    blocks: Blocks
+    block: Bloc
+    blocks: Blocs
     new_block: Nouveau Block
     edit_block: Modifier le block
 

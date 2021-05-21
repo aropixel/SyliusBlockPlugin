@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 
 class BlockType extends AbstractResourceType
@@ -20,6 +21,7 @@ class BlockType extends AbstractResourceType
         $builder
             ->add('title', TextType::class, [
                 'label' => 'aropixel.form.block.title',
+                'constraints' => [new NotBlank(['groups' => ['sylius']])]
             ])
 
             ->add('code', TextType::class, [
@@ -29,7 +31,8 @@ class BlockType extends AbstractResourceType
             ->add('category', EntityType::class, [
                 'label' => "Catégorie",
                 'class' => BlockCategory::class,
-                'choice_label' => 'title'
+                'choice_label' => 'title',
+                'constraints' => [new NotBlank(['groups' => ['sylius']])]
             ])
 
             ->add('content', CKEditorType::class, [

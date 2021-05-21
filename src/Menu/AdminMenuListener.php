@@ -19,7 +19,7 @@ final class AdminMenuListener
         $blockMenu
             ->addChild('blocks', ['route' => 'aropixel_admin_block_index'])
             ->setLabelAttribute('icon', 'file alternate')
-            ->setLabel('Blocks')
+            ->setLabel('aropixel.ui.blocks')
         ;
 
 
